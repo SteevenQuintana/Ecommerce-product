@@ -1,0 +1,46 @@
+@use 'variables' as v;
+@use 'mixins';
+
+.gallery {
+    &__img-container {
+        height: 300px;
+        width: 100%;
+        background-image: url('../images/image-product-1.jpg');
+        background-size: cover;
+        background-position-y: -35px;
+        &:hover {
+            cursor: pointer;
+            border: 1px solid v.$Orange;
+        }
+    }
+    &__previous {
+        @include mixins.img-btn(190px, 15px, false);
+    }
+    &__next {
+        @include mixins.img-btn(190px, 320px, false);
+    }
+    &__thumnails {
+        display: none;
+    }
+    @media (min-width: 1115px) {
+        width: 446px;
+        &__img-container {
+            border-radius: 16px;
+            height: 446px;
+            background-position-y: 0px;
+            margin-bottom: 32px;
+        }
+        &__thumnails {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__thumnail {
+            width: 90px;
+            border-radius: 16px;
+            &:hover {
+                cursor: pointer;
+                border: 1px solid v.$Orange;
+            }
+        }
+    }
+}

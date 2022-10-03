@@ -1,0 +1,26 @@
+@use "variables" as v;
+@use "mixins";
+.navbar {
+  display: none;
+  width: 400px;
+  @media (min-width: 1115px) {
+    display: block;
+  }
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+  &__link {
+    text-decoration: none;
+    color: v.$Dark-grayish-blue;
+    font-size: 1.1em;
+    display: block;
+    height: 112px;
+    padding-top: 42px;
+
+    &:hover {
+      border-bottom: 4px solid v.$Orange;
+    }
+  }
+}
